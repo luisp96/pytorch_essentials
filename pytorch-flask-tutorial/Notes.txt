@@ -1,0 +1,27 @@
+Notes for the proper execution of the pytorch-flask MNIST detection project
+--------------------------------------------------------------------------------
+1.- Make sure to have the correct directory structure for the project.
+2.- Install Flask, pytorch and any other dependencies in a virtual env, either pythons or conda env
+3.- Start Flask by first navigating to the app directory and SETUP ENV VARIABLES: I run my stuff from PyCharm command line which runs windows native
+    - (in app) export FLASK_APP=main.py  # exposes the main.py file to FLASK
+    - (in app) export FLASK_ENV=development # development env gives us hot reloading, so real time changes are displayed
+    FOR WINDOWS:
+    - (in app) set FLASK_APP=main.py
+    - (in app) set FLASK_ENV=development
+    TO RUN:
+    - flask run
+4.- We create a test dir and a test.py file to test connection with http://127.0.0.1:5000
+5.- Run your FeedForward code, and make sure to change the download flag to False if you already have the MNIST dataset downloaded somewhere in your project structure
+    - Also, make sure to save your model, in this case I saved it as mnist_ffn.pth and put it on your app directory (same level as main.py)
+
+
+
+
+
+
+
+ERRORS:
+if you get: OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5 already initialized
+ - try uninstalling numpy from your env and re-installing it so:
+        pip uninstall numpy
+        pip install numpy
